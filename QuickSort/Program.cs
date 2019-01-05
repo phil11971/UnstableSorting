@@ -26,10 +26,10 @@ namespace QuickSort
         //Сложность алгоритма: 
         //O(n*logn) - ср. время
         //O(n^2) - худший случай
-        static void QuickSort(ref int[] a, int l, int r)
+        static void QuickSort(ref int[] arr, int l, int r)
         {
-            int temp;
-            int x = a[l + (r - l) / 2];
+            int tmp;
+            int midEl = arr[l + (r - l) / 2];
             //запись эквивалентна (l+r)/2,
             //но не вызввает переполнения на больших данных
             int i = l;
@@ -37,22 +37,21 @@ namespace QuickSort
             //код в while обычно выносят в процедуру particle
             while (i <= j)
             {
-                while (a[i] < x)
+                while (arr[i] < midEl)
                     i++;
 
-                while (a[j] > x)
+                while (arr[j] > midEl)
                     j--;
 
                 if (i <= j)
                 {
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp; i++;
-                    j--;
+                    tmp = arr[i];
+                    arr[i++] = arr[j];
+                    arr[j--] = tmp; 
                 }
             }
-            if (i < r) QuickSort(ref a, i, r);
-            if (l < j) QuickSort(ref a, l, j);
+            if (i < r) QuickSort(ref arr, i, r);
+            if (l < j) QuickSort(ref arr, l, j);
         }
 
         static void PrintMas(int[] arr)
