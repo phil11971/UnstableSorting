@@ -15,7 +15,7 @@ namespace PyramidSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = PyramidSort(mas);
+            PyramidSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -23,7 +23,7 @@ namespace PyramidSort
             Console.ReadKey();
         }
         //Cложность алгоритма: O(n*log n)
-        static int[] PyramidSort(int[] arr)
+        public static void PyramidSort(int[] arr)
         {
             //step 1: building the pyramid
             for (int i = arr.Length / 2 - 1; i >= 0; --i)
@@ -47,10 +47,9 @@ namespace PyramidSort
                     i = add2pyramid(arr, i, k);
                 }
             }
-            return arr;
         }
 
-        static int add2pyramid(int[] arr, int i, int N)
+        private static int add2pyramid(int[] arr, int i, int N)
         {
             int imax;
             int buf;

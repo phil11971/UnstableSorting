@@ -15,7 +15,7 @@ namespace ShellSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = ShellSort(mas);
+            ShellSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -24,7 +24,7 @@ namespace ShellSort
         }
 
         //Cложность O(n^(4/3)) или O(n*log^2(n))
-        static int[] ShellSort(int[] arr)
+        public static void ShellSort(int[] arr)
         {
             int increment = arr.Length / 2;
             while (increment >= 1)
@@ -35,7 +35,6 @@ namespace ShellSort
                 }
                 increment = increment / 2;
             }
-            return arr;
         }
 
         private static void InsertionSort(int[] arr, int startIndex, int increment)

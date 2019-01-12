@@ -15,7 +15,7 @@ namespace SelectionSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = SelectionSort(mas);
+            SelectionSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -24,7 +24,7 @@ namespace SelectionSort
         }
 
         //Сложность алгоритма: O(n^2)
-        static int[] SelectionSort(int[] mas)
+        public static void SelectionSort(int[] mas)
         {
             for (int i = 0; i < mas.Length - 1; i++)
             {
@@ -40,7 +40,6 @@ namespace SelectionSort
                 mas[i] = mas[min];
                 mas[min] = dummy;
             }
-            return mas;
         }
 
         static void PrintMas(int[] arr)

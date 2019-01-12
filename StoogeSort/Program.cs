@@ -15,7 +15,7 @@ namespace StoogeSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            Stoogesort(ref mas, 0, mas.Length - 1);
+            Stoogesort(mas, 0, mas.Length - 1);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -23,7 +23,7 @@ namespace StoogeSort
             Console.ReadKey();
         }
 
-        static void Stoogesort(ref int[] arr, int l, int h)
+        static void Stoogesort(int[] arr, int l, int h)
         {
             if (l >= h)
                 return;
@@ -39,9 +39,9 @@ namespace StoogeSort
             {
                 int t = (h - l + 1) / 3;
 
-                Stoogesort(ref arr, l, h - t);
-                Stoogesort(ref arr, l + t, h);
-                Stoogesort(ref arr, l, h - t);
+                Stoogesort(arr, l, h - t);
+                Stoogesort(arr, l + t, h);
+                Stoogesort(arr, l, h - t);
             }
         }
 
